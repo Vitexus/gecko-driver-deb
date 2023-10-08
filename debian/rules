@@ -12,3 +12,4 @@ override_dh_auto_install:
 	./download.sh
 	dh_auto_install
 
+override_dh_strip:
