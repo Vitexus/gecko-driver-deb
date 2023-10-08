@@ -1,0 +1,6 @@
+gecko-driver (2.8) UNRELEASED; urgency=low
+
+  * Initial release. Closes: #nnnn
+    <nnnn is the bug number of your ITP>
+
+ -- Vítězslav Dvořák <info@vitexsoftware.cz>  Sun, 08 Oct 2023 15:19:54 +0200
