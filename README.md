@@ -1,6 +1,6 @@
 # gecko-driver-deb
 
-repack current geckodriver as debian package
+repacked current [geckodriver](https://github.com/mozilla/geckodriver) as debian package
 
 sudo apt install lsb-release wget apt-transport-https bzip2
 
