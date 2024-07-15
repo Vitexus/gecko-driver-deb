@@ -1,0 +1,5 @@
+/debian/.debhelper/
+/debian/tmp/
+/debian/files
+/debian/gecko-driver.substvars
+/debian/gecko-driver/
