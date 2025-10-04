@@ -8,8 +8,14 @@
 %:
 	dh $@
 
+override_dh_auto_build:
+	# Nic neděláme při sestavování
+
 override_dh_auto_install:
+	# Stáhneme geckodriver binárku
 	./download.sh
+	# Použijeme standardní dh_auto_install
 	dh_auto_install
 
 override_dh_strip:
+	# Přeskočíme strip kvůli binárce z upstream

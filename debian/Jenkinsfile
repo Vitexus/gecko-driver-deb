@@ -42,10 +42,21 @@ distributions.each { distro ->
                     buildImage = docker.image(imageName)
 
                     sh 'git checkout debian/changelog'
-                    buildVer = sh(
-                        script: "dpkg-parsechangelog --show-field Version",
+                    
+                    // Zjistím aktuální verzi geckodriver z GitHub API
+                    def geckodriverVersion = sh(
+                        script: "curl -s https://api.github.com/repos/mozilla/geckodriver/releases/latest | grep -oP '\"tag_name\": \"\\K(.*)(?=\")' | sed 's/^v//'",
                         returnStdout: true
-                    ).trim() + ".${env.BUILD_NUMBER}~${distroCode}"
+                    ).trim()
+                    
+                    echo "Detected geckodriver version: ${geckodriverVersion}"
+                    
+                    // Aktualizuji changelog na aktuální verzi geckodriver
+                    sh """
+                        dch -v ${geckodriverVersion} "New upstream release ${geckodriverVersion}"
+                    """
+                    
+                    buildVer = geckodriverVersion + ".${env.BUILD_NUMBER}~${distroCode}"
                 }
 
                 stage("Build ${distro}") {
