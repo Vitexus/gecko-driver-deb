@@ -2,7 +2,7 @@ Source: gecko-driver
 Section: unknown
 Priority: optional
 Maintainer: Vítězslav Dvořák <info@vitexsoftware.cz>
-Build-Depends: debhelper-compat (= 13)
+Build-Depends: debhelper-compat (= 13), jq
 Standards-Version: 4.5.1
 Homepage: https://github.com/mozilla/geckodriver
 Rules-Requires-Root: no
