@@ -3,7 +3,7 @@
 rm -f debian/changelog.dch
 
 # Get the latest release version
-LATEST_VERSION=$(curl -s https://api.github.com/repos/mozilla/geckodriver/releases/latest | grep -oP '"tag_name": "\K(.*)(?=")' | sed 's/^v//')
+LATEST_VERSION=$(curl -s https://api.github.com/repos/mozilla/geckodriver/releases/latest | jq -r '.tag_name' | sed 's/^v//')
 
 echo Fixing package version to  $LATEST_VERSION
 

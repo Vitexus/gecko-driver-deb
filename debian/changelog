@@ -1,8 +1,14 @@
-gecko-driver (0.34.0) UNRELEASED; urgency=medium
+gecko-driver (0.36.0) UNRELEASED; urgency=medium
+
+  * New upstream release 0.36.0
+
+ -- vitex <info@vitexsoftware.cz>  Mon, 26 Jan 2026 19:11:20 +0100
+
+gecko-driver (0.34.0) unstable; urgency=medium
 
   * New upstream release 0.34.0
 
- -- vitex <info@vitexsoftware.cz>  Mon, 15 Jul 2024 22:22:11 +0200
+ -- vitex <info@vitexsoftware.cz>  Mon, 26 Jan 2026 19:11:20 +0100
 
 gecko-driver (0.34.0) unstable; urgency=medium
 

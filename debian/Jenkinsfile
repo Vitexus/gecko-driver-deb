@@ -11,7 +11,7 @@ String[] distributions = [
 ]
 
 String vendor = 'vitexsoftware'
-String imagePrefix = 'multiflexi-'
+String imagePrefix = ''
 
 properties([
     copyArtifactPermission('*')
@@ -42,6 +42,8 @@ distributions.each { distro ->
                     buildImage = docker.image(imageName)
 
                     sh 'git checkout debian/changelog'
+                    // Update to latest upstream version
+                    sh './upver.sh'
                     buildVer = sh(
                         script: "dpkg-parsechangelog --show-field Version",
                         returnStdout: true
