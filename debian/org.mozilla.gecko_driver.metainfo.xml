@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="console-application">
+  <id>org.mozilla.gecko_driver</id>
+  <icon type="stock">gecko-driver</icon>
+  <metadata_license>MIT</metadata_license>
+  <project_license>MPL-2.0</project_license>
+  <name>GeckoDriver</name>
+  <summary>WebDriver for Firefox</summary>
+  <description>
+    <p>
+      GeckoDriver is a proxy for using W3C WebDriver-compatible clients to interact with Gecko-based browsers. This package contains the GeckoDriver binary.
+    </p>
+  </description>
+  <categories>
+    <category>Development</category>
+    <category>ConsoleOnly</category>
+  </categories>
+  <url type="homepage">https://github.com/mozilla/geckodriver</url>
+  <url type="bugtracker">https://github.com/mozilla/geckodriver/issues</url>
+  <developer id="org.mozilla">
+    <name>Mozilla</name>
+  </developer>
+  <provides>
+    <binary>geckodriver</binary>
+  </provides>
+  <content_rating type="oars-1.1"/>
+</component>
