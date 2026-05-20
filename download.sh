@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Get the latest release version
-LATEST_VERSION=$(curl -s https://api.github.com/repos/mozilla/geckodriver/releases/latest | grep -oP '"tag_name": "\K(.*)(?=")')
+LATEST_VERSION=$(curl -s https://api.github.com/repos/mozilla/geckodriver/releases/latest | jq -r '.tag_name')
 
 # Determine the current architecture
 ARCH=$(uname -m)
@@ -18,8 +18,8 @@ fi
 URL="https://github.com/mozilla/geckodriver/releases/download/$LATEST_VERSION/geckodriver-$LATEST_VERSION-$ARCH.tar.gz"
 
 # Download the package
-mkdir  -p debian/tmp
-rm -rf debian/tmp/*
+mkdir -p debian/tmp
+rm -f debian/tmp/geckodriver.tar.gz debian/tmp/geckodriver
 wget "$URL" -O debian/tmp/geckodriver.tar.gz
 # Unpack the downloaded file
 tar -xf debian/tmp/geckodriver.tar.gz -C debian/tmp
