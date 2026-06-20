@@ -12,10 +12,8 @@ override_dh_auto_build:
 	# Nic neděláme při sestavování
 
 override_dh_auto_install:
-	# Stáhneme geckodriver binárku
 	./download.sh
-	# Použijeme standardní dh_auto_install
-	dh_auto_install
+	install -D -m 755 debian/tmp/geckodriver debian/gecko-driver/usr/bin/geckodriver
 
 override_dh_strip:
 	# Přeskočíme strip kvůli binárce z upstream
